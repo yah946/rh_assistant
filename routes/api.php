@@ -10,10 +10,10 @@ Route::get('/user', function (Request $request) {
 
 
 Route::controller(AuthController::class)->group(function () {
-    Route::post('register');
-    Route::post('login');
+    Route::post('register','register');
+    Route::post('login','login');
     Route::middleware('auth:api')->group(function () {
-        Route::post('logout');
-        Route::post('refresh');
+        Route::post('logout','logout');
+        Route::post('refresh','refresh');
     });
 });
