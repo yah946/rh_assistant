@@ -11,7 +11,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title'       => 'required|string|max:255',
             'skills'      => 'required|array|min:1',
-            'skills.*'    => 'required|string|max:100',
+            'skills.*'    => 'required|string|max:50',
             'year_exp'    => 'nullable|integer|min:0',
             'education'   => 'nullable|string|max:255',
             'location'    => 'nullable|string|max:255',
