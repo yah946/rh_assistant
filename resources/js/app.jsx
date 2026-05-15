@@ -14,7 +14,6 @@ function App() {
         <div className="main">
           <h2 className="page-title">Available Job Openings</h2>
 
-          {/* Search Bar */}
           <div className="search-bar">
             <div className="search-input-wrap">
               <span className="search-icon">&#128269;</span>
