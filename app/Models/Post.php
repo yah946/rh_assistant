@@ -13,7 +13,19 @@ class Post extends Model
     ];
 
     protected $casts = [
-        'skills'   => 'array',   // <-- JSON ↔ Array auto
+        'skills'   => 'array', 
         'year_exp' => 'integer',
     ];
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    
+    public function viewers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'post_views')
+                    ->withPivot('viewed_at')
+                    ->withTimestamps();
+    }
 }
